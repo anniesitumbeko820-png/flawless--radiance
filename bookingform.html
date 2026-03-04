@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flawless Radiance | Book Appointment</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffd6e8, #ffb3d1);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      background-color: rgba(255,255,255,0.6);
+      width: 100%;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #a8005a;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ff007f;
+    }
+
+    .booking-container {
+      background: #fff;
+      margin: 50px 0;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #a8005a;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      color: #a8005a;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #ff4d94;
+    }
+
+    .service-img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #ff4d94;
+      border: none;
+      color: white;
+      padding: 12px;
+      border-radius: 25px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #e60073;
+    }
+
+    footer {
+      margin: 30px 0 20px;
+      font-size: 0.9rem;
+      color: #a8005a;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="product.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="bookingform.html">Book</a>
+  </nav>
+
+  <div class="booking-container">
+    <h2>Book Your Appointment</h2>
+    <p>Select your service and schedule your glow session 💖</p>
+
+    <img id="service-image" class="service-img" src="images/default.jpg" alt="Selected Service">
+
+    <form id="booking-form">
+      <label for="service">Service:</label>
+      <input type="text" id="service" readonly required>
+
+      <label>Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Email Address:</label>
+      <input type="email" id="email" required>
+
+      <label>Phone Number:</label>
+      <input type="tel" id="phone" placeholder="+260..." required>
+
+      <label>Preferred Date:</label>
+      <input type="date" id="date" required>
+
+      <label>Preferred Time:</label>
+      <input type="time" id="time" required>
+
+      <label>Additional Notes (Optional):</label>
+      <textarea id="notes" rows="4"></textarea>
+
+      <button type="submit">Proceed to Checkout</button>
+    </form>
+  </div>
+
+  <footer>© 2025 Flawless Radiance — All Rights Reserved</footer>
+
+  <script>
+    // Get the service selected from services.html
+    const selectedService = JSON.parse(localStorage.getItem('selectedService'));
+    const serviceInput = document.getElementById('service');
+    const serviceImage = document.getElementById('service-image');
+
+    if (selectedService) {
+      serviceInput.value = selectedService.name;
+      serviceImage.src = selectedService.image;
+    }
+
+    // Handle form submission
+    document.getElementById('booking-form').addEventListener('submit', e => {
+      e.preventDefault();
+
+      const booking = {
+        service: serviceInput.value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value,
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        notes: document.getElementById('notes').value,
+        image: selectedService ? selectedService.image : ''
+      };
+
+      localStorage.setItem('booking', JSON.stringify(booking));
+      window.location.href = 'checkout.html';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flawless Radiance Login</title>
+  <style>
+    /* General Page Setup */
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fdd6e0; /* light pink background */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Login Container */
+    .login-container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(196, 91, 135, 0.2);
+      width: 360px;
+      text-align: center;
+      border: 2px solid #e60073;
+    }
+
+    /* Title */
+    .login-container h2 {
+      color: #e60073;
+      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Input Fields */
+    .input-box {
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #e60073;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1.5px solid#e60073;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+      transition: 0.3s;
+      background-color: #fff8fa;
+    }
+
+    input:focus {
+      border-color: #c45b87;
+      box-shadow: 0 0 6px rgba(196, 91, 135, 0.4);
+    }
+
+    /* Options (Remember/Forgot) */
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #e60073;
+      margin-bottom: 20px;
+    }
+
+    .options a {
+      color: #e60073;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .options a:hover {
+      text-decoration: underline;
+    }
+
+    /* Login Button */
+    .login-btn {
+      background-color: #c45b87;
+      border: none;
+      color: white;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    .login-btn:hover {
+      background-color: #e60073;
+    }
+
+    /* Sign up link */
+    .signup-link {
+      margin-top: 18px;
+      font-size: 14px;
+      color:#e60073;
+    }
+
+    .signup-link a {
+      color: #e60073;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>LOGIN</h2>
+    <form action="homepage2.html" method="get">
+      <div class="input-box">
+        <label>Email</label>
+        <input type="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required>
+      </div>
+
+      <div class="options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Log In</button>
+
+      <div class="signup-link">
+        Don’t have an account? <a href="homepage2.html">Sign up</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
+

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flawless Radiance | Skin Consultation</title>
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body {background: linear-gradient(to right, #ffd6e8, #ffb3d1); color:#333;}
+
+    /* Navbar */
+    nav {
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      padding:20px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(5px);
+      position: sticky;
+      top:0;
+      z-index:100;
+    }
+
+    nav a {
+      text-decoration:none;
+      font-weight:600;
+      color:#a8005a;
+      transition:0.3s;
+    }
+
+    nav a:hover {color:#ff007f;}
+
+    /* Section Headers */
+    .section-header {
+      text-align:center;
+      margin:50px 0 30px;
+    }
+
+    .section-header h2 {
+      font-size:2rem;
+      color:#a8005a;
+      margin-bottom:10px;
+    }
+
+    .section-header p {
+      font-size:1.1rem;
+      color:#444;
+      max-width:600px;
+      margin:0 auto;
+    }
+
+    /* Grid */
+    .grid-container {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap:25px;
+      padding:0 40px 50px;
+    }
+
+    /* Skin Cards */
+    .skin-card {
+      background:#fff;
+      border-radius:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      overflow:hidden;
+      text-align:center;
+      position:relative;
+      transition:0.3s;
+    }
+
+    .skin-card:hover {
+      transform: translateY(-5px);
+      box-shadow:0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .skin-card img {
+      width:100%;
+      height:250px;
+      object-fit:cover;
+    }
+
+    .skin-card p {
+      padding:15px;
+      color:#555;
+    }
+
+    .skin-card button {
+      background-color:#ff4d94;
+      border:none;
+      color:white;
+      padding:10px 20px;
+      border-radius:25px;
+      cursor:pointer;
+      margin-bottom:20px;
+      transition:0.3s;
+    }
+
+    .skin-card button:hover {
+      background-color:#e60073;
+    }
+
+    /* Overlay */
+    .overlay {
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:rgba(0,0,0,0.5);
+      color:#fff;
+      padding:10px;
+      font-size:1rem;
+      opacity:0;
+      transform: translateY(100%);
+      transition:0.3s;
+    }
+
+    .skin-consult:hover .overlay {
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    footer {
+      text-align:center;
+      padding:20px;
+      color:#a8005a;
+      background-color:rgba(255,255,255,0.4);
+    }
+
+    @media (max-width:768px) {
+      .grid-container {padding:0 20px;}
+      nav {flex-wrap:wrap; gap:15px;}
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+  <a href="homepage2.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="product.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="bookingform.html">Book</a>
+</nav>
+
+<!-- Skin Consultation -->
+<section>
+  <div class="section-header">
+    <h2>Skin Consultation</h2>
+    <p>Identify your skin type and discover tailored skincare treatments made just for you.</p>
+  </div>
+
+  <div class="grid-container">
+    <div class="skin-card skin-consult">
+      <img src="images/oilydkin.jpg" alt="Oily Skin">
+      <div class="overlay">Oily Skin</div>
+      <p>Shiny complexion and enlarged pores — needs deep cleansing and oil control care.</p>
+    </div>
+
+    <div class="skin-card skin-consult">
+      <img src="images/drydkin.jpg" alt="Dry Skin">
+      <div class="overlay">Dry Skin</div>
+      <p>Tightness and flaking — requires hydration and moisture-locking treatments.</p>
+    </div>
+
+    <div class="skin-card skin-consult">
+      <img src="images/combinedskin.jpg" alt="Combination Skin">
+      <div class="overlay">Combination Skin</div>
+      <p>Oily T-zone and dry cheeks — needs balance with dual-focus skincare products.</p>
+    </div>
+
+    <div class="skin-card skin-consult">
+      <img src="images/sensentiveskin.jpg" alt="Sensitive Skin">
+      <div class="overlay">Sensitive Skin</div>
+      <p>Prone to redness and irritation — gentle, fragrance-free care is best.</p>
+    </div>
+
+    <div class="skin-card skin-consult">
+      <img src="images/normalsikin.jpg" alt="Normal Skin">
+      <div class="overlay">Normal Skin</div>
+      <p>Well-balanced skin type — maintain glow with mild cleansers and light moisturizers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Skin Type Analysis & Recommendations -->
+<section>
+  <div class="section-header">
+    <h2>Skin Type Analysis & Recommendations 🌿</h2>
+    <p>Based on your skin type, here are our recommended treatments and products to keep your skin radiant.</p>
+  </div>
+
+  <div class="grid-container">
+    <div class="skin-card">
+      <img src="images/oily.jpg" alt="Oily Skin">
+      <p>Exfoliating scrub & serum to unclog pores, balance oil, and even tone.</p>
+      <button onclick="location.href='product.html'">View Product</button>
+    </div>
+
+    <div class="skin-card">
+      <img src="images/dry.jpg" alt="Dry Skin">
+      <p>Moisturizing cream & hydrating oil to lock in moisture and restore radiance.</p>
+      <button onclick="location.href='product.html'">View Product</button>
+    </div>
+
+    <div class="skin-card">
+      <img src="images/combinedskin.jpg" alt="Combination Skin">
+      <p>Exfoliating scrub 2–3 times weekly plus serum to balance skin texture.</p>
+      <button onclick="location.href='product.html'">View Product</button>
+    </div>
+
+    <div class="skin-card">
+      <img src="images/sensetive.jpg" alt="Sensitive Skin">
+      <p>Gentle wax & after-care products, dermatologically tested for sensitive skin.</p>
+      <button onclick="location.href='product.html'">View Product</button>
+    </div>
+
+    <div class="skin-card">
+      <img src="images/pcos.jpg" alt="PCOS Affected Skin">
+      <p>Serum helps fade marks & pigmentation while restoring confidence through natural healing.</p>
+      <button onclick="location.href='product.html'">View Product</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  ©️ 2025 Flawless Radiance. All Rights Reserved.
+</footer>
+
+</body>
+</html>
+

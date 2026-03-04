@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Flawless Radiance</title>
+  <style>
+    :root {
+      --pink-1: #ffd6e8;
+      --pink-2: #ffb3d1;
+      --pink-3: #ff79b0;
+      --pink-4: #c2185b;
+      --white: #fff;
+      --muted: #5a3a3a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, var(--pink-1), var(--pink-2));
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--pink-4);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--pink-3);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 70px 20px 30px;
+    }
+
+    .hero h1 {
+      color: var(--pink-4);
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 6%;
+      gap: 40px;
+    }
+
+    .about-section img {
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    }
+
+    .about-text {
+      max-width: 600px;
+    }
+
+    .about-text h2 {
+      color: var(--pink-4);
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .about-text p {
+      line-height: 1.7;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .mission {
+      background-color: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.1);
+      padding: 40px 30px;
+      margin: 50px auto;
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .mission h3 {
+      color: var(--pink-4);
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+    }
+
+    .mission p {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .skin-types {
+      padding: 60px 6%;
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 25px;
+      margin: 60px auto;
+      max-width: 1200px;
+    }
+
+    .skin-types h2 {
+      text-align: center;
+      color: var(--pink-4);
+      margin-bottom: 30px;
+    }
+
+    .skin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .skin-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .skin-card:hover {
+      transform: scale(1.03);
+    }
+
+    .skin-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .skin-card .info {
+      padding: 15px;
+    }
+
+    .skin-card h4 {
+      color: var(--pink-4);
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .skin-card p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: var(--pink-4);
+      font-size: 0.9rem;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="homepage2.html">Home</a>
+    <a href="product.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="bookingform.html">Book</a>
+  </nav>
+
+  <section class="hero">
+    <h1>About Flawless Radiance 🌸</h1>
+    <p>
+      Flawless Radiance was created for every woman who ever felt uncomfortable in her own skin. 
+      Our brand was born from compassion — designed especially for women who struggle with 
+      <strong>hyperpigmentation, PCOS, and uneven skin tones</strong> in their intimate areas. 
+      Our mission is to bring back confidence, strength, and beauty through natural, gentle skincare that truly heals.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <img src="images/IMG-20250813-WA0007.jpg" alt="Flawless Radiance Natural Wax">
+    <div class="about-text">
+      <h2>Our Story</h2>
+      <p>
+        Flawless Radiance began with one purpose — to help women regain the comfort and confidence they deserve. 
+        Our founder created a unique <strong>wax formula</strong> that not only removes hair but also helps restore 
+        the natural glow of the skin, especially for women dealing with hormonal imbalances or pigmentation issues.
+      </p>
+      <p>
+        Our <strong>signature serum</strong> was later introduced to gently fade dark spots and erase traces of beard shadows 
+        or pigmentation left by PCOS. Together, the wax and serum work hand in hand — to remove, repair, and restore beauty.
+      </p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <h3>Our Mission 💕</h3>
+    <p>
+      We believe every woman deserves to look in the mirror and see her true beauty — radiant, confident, and powerful. 
+      Flawless Radiance is more than a skincare brand; it’s a movement that celebrates natural beauty, body positivity, 
+      and self-love. Every product is carefully formulated with safe, organic ingredients to care for all skin tones and types.
+    </p>
+  </section>
+  <footer>
+    © 2025 Flawless Radiance — Restoring Confidence, One Glow at a Time ✨
+  </footer>
+
+</body>
+</html>

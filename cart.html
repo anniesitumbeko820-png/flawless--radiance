@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    background: #fff0f5;
+  }
+  h1 {
+    color: #c51c5b;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+  li img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  li span {
+    font-weight: 700;
+    flex: 1;
+  }
+  button.remove {
+    background: #ff70a6;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .btn-checkout {
+    background: #c51c5b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+  }
+  .continue-shopping {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #c51c5b;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<h1>Your Cart</h1>
+<ul id="cart-list"></ul>
+<button class="btn-checkout" id="checkout">Checkout</button>
+<a href="services.html" class="continue-shopping">Continue Shopping</a>
+
+<script>
+  // Get the booked service from localStorage
+  let cart = [];
+
+  const bookedService = JSON.parse(localStorage.getItem('booking'));
+  if (bookedService && bookedService.service) {
+    cart.push({
+      name: bookedService.service,
+      image: bookedService.image
+    });
+  }
+
+  function displayCart() {
+    const cartList = document.getElementById('cart-list');
+    cartList.innerHTML = '';
+
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <img src="${item.image}" alt="${item.name}">
+        <span>${item.name}</span>
+        <button class="remove" data-index="${index}">Remove</button>
+      `;
+      cartList.appendChild(li);
+    });
+
+    // Remove button functionality
+    document.querySelectorAll('.remove').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const idx = e.target.dataset.index;
+        cart.splice(idx, 1);
+        localStorage.removeItem('booking'); // Remove booked service if deleted
+        displayCart();
+      });
+    });
+  }
+
+  displayCart();
+
+  document.getElementById('checkout').addEventListener('click', () => {
+    if (cart.length === 0) {
+      alert("Your cart is empty!");
+      return;
+    }
+    localStorage.setItem("orderType", "service");
+    window.location.href = "checkout.html";
+  });
+</script>
+
+</body>
+</html>
+

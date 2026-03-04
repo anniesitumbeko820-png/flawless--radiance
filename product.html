@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flawless Radiance | Products</title>
+  <style>
+    :root {
+      --pink-1: #ffe6f2;
+      --pink-2: #ffd6e8;
+      --pink-3: #ff70a6;
+      --pink-4: #c51c5b;
+      --muted: #5a3a3a;
+      --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, sans-serif;
+      background: linear-gradient(180deg, var(--pink-1), var(--pink-2));
+      color: var(--muted);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 6%;
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--pink-4);
+      font-size: 22px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: var(--pink-4);
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      opacity: 0.9;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 6%;
+      gap: 40px;
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 700px;
+    }
+
+    .eyebrow {
+      color: var(--pink-4);
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: var(--pink-4);
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .hero p.lead {
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--pink-3);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(197, 61, 116, 0.2);
+      transition: 0.25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--pink-4);
+      border: 2px solid var(--pink-4);
+    }
+
+    .hero-right {
+      width: 260px;
+      height: 260px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #ffd6e8, #ffb3d1);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+
+    .circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* PRODUCTS */
+    .products-wrap {
+      padding: 40px 6% 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .img-wrap {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #ffe6f2, #ffd6e8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .meta h3 {
+      margin: 0 0 6px;
+      color: var(--pink-4);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .meta p.desc {
+      font-size: 14px;
+      line-height: 1.4;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      background: rgba(197, 28, 91, 0.1);
+      color: var(--pink-4);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .how {
+      font-size: 13px;
+      color: #5a3a3a;
+      margin-bottom: 10px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .price {
+      font-weight: 800;
+      color: var(--pink-3);
+      font-size: 18px;
+    }
+
+    .add-btn {
+      background: var(--pink-3);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">FLAWLESS RADIANCE</div>
+    <nav aria-label="main navigation">
+      <ul>
+         <a href="homepage2.html">Home</a>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="bookingform.html">Book</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" aria-label="products hero">
+    <div class="hero-left">
+      <div class="eyebrow">Featured Collection</div>
+      <h1>Enhance Your Natural Radiance</h1>
+      <p class="lead">
+        Handcrafted blends and gentle actives made for melanin-rich skin — brightening serums, nourishing oils, exfoliating scrubs, and creams designed to restore confidence.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'});">Shop Products</button>
+        <button class="btn secondary" onclick="location.href='services.html'">See Services</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="circle">
+        <img src="/images/mainp1.jpg" alt="Flawless Radiance Hero" />
+      </div>
+    </div>
+  </section>
+
+  <main class="products-wrap" id="products">
+    <div class="products-grid">
+      <!-- Product 1 -->
+      <article class="card">
+        <div class="img-wrap">
+          <img src="/images/the wax.jpg" alt="Flawless Sugar Wax" />
+        </div>
+        <div class="meta">
+          <h3>Flawless Sugar Wax</h3>
+          <p class="desc">
+            A natural, gentle hair removal formula made from the finest ingredients. It removes unwanted hair while leaving skin smooth and hydrated. Perfect for underarms, intimate areas, and legs.
+          </p>
+          <div class="tags">
+            <span class="tag">All Skin Types</span>
+            <span class="tag">Gentle Formula</span>
+          </div>
+          <div class="how"><strong>How to Use:</strong> Warm slightly, spread a thin layer, and remove with cloth in opposite hair growth direction.</div>
+          <div class="price-row">
+            <div class="price">K100</div>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="card">
+        <div class="img-wrap">
+          <img src="/images/mainp1.jpg" alt="Flawless Comb Oil" />
+        </div>
+        <div class="meta">
+          <h3>Flawless Comb Oil</h3>
+          <p class="desc">
+            Lightweight oil that hydrates and adds glow to intimate areas and skin. Helps reduce dryness and improves texture.
+          </p>
+          <div class="tags">
+            <span class="tag">Dry Skin</span>
+            <span class="tag">Normal Skin</span>
+          </div>
+          <div class="how"><strong>How to Use:</strong> Warm 2–3 drops in palms and massage onto clean skin after showering.</div>
+          <div class="price-row">
+            <div class="price">K220</div>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="card">
+        <div class="img-wrap">
+          <img src="/images/gentle comb.jpg" alt="Gentle Comb Serum" />
+        </div>
+        <div class="meta">
+          <h3>Gentle Comb Serum</h3>
+          <p class="desc">
+            Melanin-safe brightening formula with niacinamide and licorice root to fade dark patches over time and even skin tone.
+          </p>
+          <div class="tags">
+            <span class="tag">All Skin Types</span>
+            <span class="tag">Brightening</span>
+          </div>
+          <div class="how"><strong>How to Use:</strong> Apply a pea-sized amount to target areas once daily, follow with moisturizer.</div>
+          <div class="price-row">
+            <div class="price">K180</div>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="card">
+        <div class="img-wrap">
+          <img src="/images/scrub 2.jpg" alt="Exfoliating Scrub" />
+        </div>
+        <div class="meta">
+          <h3>Exfoliating Scrub</h3>
+          <p class="desc">
+            Gentle scrub with turmeric and honey to brighten skin and prevent ingrown hairs after waxing.
+          </p>
+          <div class="tags">
+            <span class="tag">Combination Skin</span>
+            <span class="tag">Oily Skin</span>
+          </div>
+          <div class="how"><strong>How to Use:</strong> Massage onto damp skin 2–3x weekly, rinse thoroughly.</div>
+          <div class="price-row">
+            <div class="price">K150</div>
+            <button class="add-btn">Add to Cart</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    ©️ 2025 Flawless Radiance | Made with love for every woman’s glow.
+  </footer>
+
+  <script>
+    // Add to Cart Functionality
+    const addBtns = document.querySelectorAll('.add-btn');
+
+    addBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const card = btn.closest('.card');
+        const name = card.querySelector('h3').textContent;
+        const priceText = card.querySelector('.price').textContent.replace('K','');
+        const price = parseFloat(priceText);
+        const image = card.querySelector('img').src;
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, image, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        window.location.href = 'cart.html';
+      });
+    });
+  </script>
+</body>
+</html>
